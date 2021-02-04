@@ -5,6 +5,8 @@
  */
 package wso10_fuctions;
 
+import java.util.Scanner;
+
 /**
  *
  * @author FAMILIA TONATO
@@ -16,29 +18,63 @@ public class WSO10_Fuctions {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int divd = 5;
-        int divr = 10;
-        float quotient = 0;
-        int x = 0;
-        int y = 0;
+        System.out.println("=================================================");
+        System.out.println(" VANESSA TONATO");
+        System.out.println("=================================================");       
+        Scanner input = new Scanner(System.in);
+        int dividend;
+        int divisor;
+        float quotient;
+        int NUM1 = 0;
+        int NUM2= 0;
+        int top=0;
+        int product=0;
+        int table=0;
+    
+  //call to divideTwoNumbers() function
+    System.out.println("Write the number of dividend-->");
+    dividend=input.nextInt ();
+    System.out.println("Write the number of divisor-->");
+    divisor=input.nextInt ();
+    quotient = divideTwoNumbers(dividend, divisor);
 
-        //call to divideTwoNumbers() function
-        quotient = divideTwoNumbers(divd, divr);
+    System.out.println(" Quotient of " + dividend + " and " + divisor + " is -> " + quotient); //0.5 or ?
 
-        System.out.println("Quotient of 5 and 10 is -> " + quotient); //0.5 or ?
+System.out.println("=================================================");          
+    System.out.println("Write the number of NUM1 -->");
+    NUM1=input.nextInt (); 
+    NUM2 = f(NUM1);
+    System.out.println("NUM2 value: " + NUM1 + " ^2-->" + NUM2);
 
-        y = f(3);
-        System.out.println("3^2 -> " + y);
-
-        y = f(-3);
-        System.out.println("-3^2 -> " + y); //9
+    System.out.println("Write the number of NUM1 -->");
+    NUM1=input.nextInt ();     
+    NUM2 = f(NUM1);
+    System.out.println("NUM2 value: " + NUM1 + " ^2-->" + NUM2); 
         
-        x = -1;
-        y = f(x);
-        System.out.println("the square of -> " + x + " <- is equal to -> " + y);
+    System.out.println("Write the number of NUM1 -->");
+    NUM1=input.nextInt ();
+    NUM2 = f(NUM1);
+    System.out.println("the square of -> " + NUM1 + " <- is equal to -> " + NUM2);
 
+System.out.println("=================================================");          
+    System.out.println("Write the number of NUM1 -->");
+    NUM1=input.nextInt (); 
+    NUM2 = g(NUM1);
+    System.out.println("NUM2 value: NUM2 = " + NUM1 + " * " + NUM1 + " + 2 * " + NUM1 + " + 1--> NUM2 = " + NUM2);
+
+System.out.println("=================================================");
+    System.out.println("Write the number of top-->");
+    top=input.nextInt ();
+    System.out.println("Write the number of table-->");
+    table=input.nextInt ();   
+    for (int j = 1 ; j <= top ; j ++){
+    product = table * j;
+    System.out.println(+ table + " * " + j + " = " + product);
     }
-
+System.out.println("=================================================");
+System.out.println("[GOOD BYE MY FRIEND]"); 
+System.out.println("=================================================");
+    }
     //function definition
     //return data type    name     parameter1   parameter2
     public static float divideTwoNumbers(int dividend, int divisor) {
@@ -52,20 +88,34 @@ public class WSO10_Fuctions {
         return quotient;
     }
 
-    public static int f(int x) {
-        int y = 0;
+    public static int f(int NUM1) {
+        
+        int NUM2 = 0;
+        NUM2 = NUM1 * NUM1;
 
-        y = x * x;
-
-        return y;
+        return NUM2;
     }
 
-    public static int g(int x) {
-        int y = 0;
+    public static int g(int NUM1) {
+     
+        int NUM2 = 0;
+        NUM2 = NUM1 * NUM1 + 2 * NUM1 + 1;
 
-        y = x * x + 2 * x + 1;
-
-        return y;
+        return NUM2;
     }
-
+     public static int tablemulriplication() {   
+    System.out.println("=================================================");
+    System.out.println("The multiplication tables: ");
+    
+    int top=0;
+    int product=0;
+    int table=0;
+    
+    for (int j = 1 ; j <= top ; j ++){
+    product = table * j;
+    System.out.println( + table + " * " + j + " = " + product);
+      
+     } 
+         return +product;
+}
 }
