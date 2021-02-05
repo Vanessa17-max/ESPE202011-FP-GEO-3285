@@ -39,17 +39,17 @@ public class WS11_Refactor {
     System.out.println(" Quotient of " + dividend + " and " + divisor + " is -> " + quotient); //0.5 or ?
 
 System.out.println("=================================================");          
-    System.out.println("Write the number of NUM1 -->");
+    System.out.println("Write the number of VariableX -->");
     VariableX=input.nextInt (); 
     VariableY = ComputeSquare(VariableX);
-    System.out.println("NUM2 value: " + VariableX + " ^2-->" + VariableY);
+    System.out.println("VariableY value: " + VariableX + " ^2-->" + VariableY);
 
-    System.out.println("Write the number of NUM1 -->");
+    System.out.println("Write the number of VariableX -->");
     VariableX=input.nextInt ();     
     VariableY = ComputeSquare(VariableX);
-    System.out.println("NUM2 value: " + VariableX + " ^2-->" + VariableY); 
+    System.out.println("VariableY value: " + VariableX + " ^2-->" + VariableY); 
         
-    System.out.println("Write the number of NUM1 -->");
+    System.out.println("Write the number of VariableX -->");
     VariableX=input.nextInt ();
     VariableY = ComputeSquare(VariableX);
     System.out.println("the square of -> " + VariableX + " <- is equal to -> " + VariableY);
@@ -58,7 +58,7 @@ System.out.println("=================================================");
     System.out.println("Write the number of NUM1 -->");
     VariableX=input.nextInt (); 
     VariableY = ComputeParabola(VariableX);
-    System.out.println("NUM2 value: NUM2 = " + VariableX + " * " + VariableX + " + 2 * " + VariableX + " + 1--> NUM2 = " + VariableY);
+    System.out.println("VariableY value: VariableY = " + VariableX + " * " + VariableX + " + 2 * " + VariableX + " + 1--> VariableY = " + VariableY);
 
 System.out.println("=================================================");
     System.out.println("The multiplication tables: ");
@@ -87,12 +87,12 @@ System.out.println("=================================================");
         return quotient;
     }
 
-    public static int ComputeSquare(int VariableY) {
+    public static int ComputeSquare(int VariableX) {
         
-        int NUM2 = 0;
-        NUM2 = VariableY * VariableY;
+        int VariableY = 0;
+        VariableY = VariableX * VariableX;
 
-        return NUM2;
+        return VariableY;
     }
 
     public static int ComputeParabola(int VariableX) {
