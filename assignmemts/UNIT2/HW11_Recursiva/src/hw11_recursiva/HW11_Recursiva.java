@@ -20,10 +20,13 @@ System.out.println("࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢
 System.out.println("~~~~VANESSA TONATO~~~~");
 System.out.println("࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢");
     Scanner scanner = new Scanner (System.in);
+    Scanner leer = new Scanner (System.in);
       int number1;
       int number2;
       int number3;
       int number4;   
+      int number5;
+      
     System.out.print("Enter the number1-->"); 
     number1 = scanner.nextInt (); 
     scanner.nextLine(); 
@@ -36,6 +39,10 @@ System.out.println("࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢࣢
     System.out.print("Enter the number4-->"); 
     number4 = scanner.nextInt (); 
     scanner.nextLine();
+    System.out.println("Enter the number5-->");  
+    number5 = scanner.nextInt (); 
+    scanner.nextLine();
+    
 System.out.println("================ Factorial Cycle ==================");
     HW11_Recursiva objfact = new HW11_Recursiva();
     System.out.println("The factorial of a number " + number1 + " using the recursive method-->" + objfact.Factorialcycle(number1));
@@ -48,6 +55,8 @@ System.out.println("=============== Interactive Sum =======================");
 System.out.println("================ PYRAMID OF * =========================");
     System.out.println("Ejemplo de recursion en java: ");
     PYRAMID(8, "*", "*");
+System.out.println("================ * F A C T O R I A L * =========================");
+    System.out.println("The factorial of " + number5 + " it is--> "+Factorial(number5));
  System.out.println("=================================================");
  System.out.println("[֍֍֍֍ GOOD BYE MY FRIEND ֍֍֍֍]"); 
    }
@@ -95,6 +104,13 @@ public static void PYRAMID(int numero, String CadenaInicial, String CadenaActual
      PYRAMID(numero, CadenaInicial, CadenaActual);
         }
     }
+public static int Factorial (int number5) {
+  int factorial = 1; 
+   for (int i = 1; i <= number5; i++) {
+   factorial = factorial + i;
+   }
+   return factorial;
+}
 }
 
 
