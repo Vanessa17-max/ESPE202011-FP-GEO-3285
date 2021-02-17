@@ -55,25 +55,25 @@ public class WS13_FisicaEjercice {
                     mayorDiagonal = scanner.nextFloat();
                     System.out.println("Enter the value of the minor diagonal : ");
                     menorDiagonal = scanner.nextFloat();
-                    area = computeAreaOfTheKite(mayorDiagonal, menorDiagonal);
+                    area = computeRhombuses(mayorDiagonal, menorDiagonal);
                     System.out.println("The area of the rhombus is " + area);
                     break;
                 case 3:
-                    area = showTheAreaOfTheTrapezium(base, topSide, height);
+                    area = computeTheAreaOfTheTrapezium(base, topSide, height);
                     System.out.println("The area of the Trapezium is " + area);
                     break;
                 case 4:
-                    finalSpeed = showTheFinalSpeed(initialVelocity, acceleration, weather);
+                    finalSpeed = computeTheFinalSpeed(initialVelocity, acceleration, weather);
                     System.out.println("The final speed is " + finalSpeed);
                     break;
 
                 case 5:
-                    distance = showTheDistance(initialVelocity, finalSpeed, weather);
+                    distance = compteTheDistance(initialVelocity, finalSpeed, weather);
                     System.out.println("The distance is " + distance);
                     break;
 
                 case 6:
-                    acceleration = showTheAcceleration(masa,fuerza);
+                    acceleration = computeTheAcceleration(masa,fuerza);
                     System.out.println("The acceleration is " + acceleration);
                     break;
 
@@ -119,13 +119,13 @@ public class WS13_FisicaEjercice {
 
     }
 
-    private static float computeAreaOfTheKite(float majorDiagonal, float minorDiagonal) {
+    private static float computeRhombuses(float majorDiagonal, float minorDiagonal) {
 
         float area;
         return (area = (majorDiagonal * minorDiagonal) / 2);
     }
 
-    private static float showTheAreaOfTheTrapezium(float base, float topSide, float height) {
+    private static float computeTheAreaOfTheTrapezium(float base, float topSide, float height) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of the base : ");
         base = scanner.nextFloat();
@@ -143,7 +143,7 @@ public class WS13_FisicaEjercice {
 
     }
 
-    private static float showTheFinalSpeed(float initialVelocity, float acceleration, float weather) {
+    private static float computeTheFinalSpeed(float initialVelocity, float acceleration, float weather) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of the initialVelocity : ");
         initialVelocity = scanner.nextFloat();
@@ -158,7 +158,7 @@ public class WS13_FisicaEjercice {
         return (finalSpeed = initialVelocity + (acceleration * weather));
     }
 
-    private static float showTheDistance(float initialVelocity, float finalSpeed, float weather) {
+    private static float compteTheDistance(float initialVelocity, float finalSpeed, float weather) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of the initialVelocity : ");
         initialVelocity = scanner.nextFloat();
@@ -171,7 +171,7 @@ public class WS13_FisicaEjercice {
 
     }
 
-    private static float showTheAcceleration(float masa, float fuerza) {
+    private static float computeTheAcceleration(float masa, float fuerza) {
         Scanner teclado= new Scanner(System.in);
         System.out.println("introduce el valor de Fuerza");
         fuerza = teclado.nextFloat();
