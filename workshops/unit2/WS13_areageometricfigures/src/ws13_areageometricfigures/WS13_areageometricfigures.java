@@ -33,6 +33,7 @@ public class WS13_areageometricfigures {
         System.out.println("3.-Circle");
         System.out.println("4.-Square");
         System.out.println("5.-Ellipse");
+        System.out.println("6.-Rhombus");
         System.out.println("8.-Exit");
         opcion = neme.nextInt();
         System.out.println("֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍");
@@ -53,6 +54,8 @@ public class WS13_areageometricfigures {
             double semiejemayor=0.0;
             double semiejemenor=0.0;
             double areaelip=0.0;
+            double menorDiagonal=0.0;
+            double mayorDiagonal=0.0;
 
         if(opcion==1){
         System.out.println("Enter the base of the rectangular tetrahedron --> ");
@@ -106,6 +109,17 @@ public class WS13_areageometricfigures {
         areaelip=semiejemayor*semiejemenor*pi;
         System.out.println("the area of ​​the ellipse is --> "+areaelip);
         }
+         else{
+
+        if(opcion==6){
+        System.out.println("Introduces the major-Diagonal axis of the Rhombus --> ");
+        mayorDiagonal=neme.nextDouble();
+        System.out.println("Introduces the minor-Diagonal axis of the Rhombus -->");
+        menorDiagonal=neme.nextDouble();
+        area = (mayorDiagonal * menorDiagonal) / 2;
+        System.out.println("the area of ​​the ellipse is --> "+area);
+        }
+        }
         }
         }
         }
@@ -114,6 +128,4 @@ public class WS13_areageometricfigures {
         System.out.println("[֍֍֍֍ GOOD BYE MY FRIEND IS VANESSA.T ֍֍֍֍]");
         }while(opcion<8);
         }
-     }
-
-     
+   }

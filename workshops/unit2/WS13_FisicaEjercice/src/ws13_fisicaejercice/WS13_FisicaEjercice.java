@@ -43,8 +43,8 @@ public class WS13_FisicaEjercice {
         System.out.println("~~~~VANESSA TONATO~~~~");
         System.out.println("֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍");
         System.out.println("  What would you like to do? ");
-        System.out.println(" 1.  The area of the circle .");
-        System.out.println(" 2.  The area of the rhombus.");
+        System.out.println(" 1.  The area of the circle");
+        System.out.println(" 2.  The area of the rhombus");
         System.out.println(" 3.  The area of the Trapezium");
         System.out.println(" 4.  The final speed.");
         System.out.println(" 5.  The distance.");
@@ -62,7 +62,9 @@ public class WS13_FisicaEjercice {
                     area = computeTheAreaOfTheCircle(radio);
                     System.out.println("The area of the circle is " + area);
                     break;
+                
                 case 2:
+                    
                     System.out.println("Enter the value of the major diagonal : ");
                     mayorDiagonal = scanner.nextFloat();
                     System.out.println("Enter the value of the minor diagonal : ");
@@ -70,11 +72,30 @@ public class WS13_FisicaEjercice {
                     area = computeRhombuses(mayorDiagonal, menorDiagonal);
                     System.out.println("The area of the rhombus is " + area);
                     break;
+                
                 case 3:
+                            
+                    System.out.println("Enter the value of the base : ");
+                    base = scanner.nextFloat();
+                    scanner.nextLine();
+                    System.out.println("Enter the value of the top side : ");
+                    topSide = scanner.nextFloat();
+                    scanner.nextLine();
+                    System.out.println("Enter the value of the height : ");
+                    height = scanner.nextFloat();
+                    scanner.nextLine();
                     area = computeTheAreaOfTheTrapezium(base, topSide, height);
                     System.out.println("The area of the Trapezium is " + area);
                     break;
+                
                 case 4:
+                            
+                    System.out.println("Enter the value of the initialVelocity : ");
+                    initialVelocity = scanner.nextFloat();
+                    System.out.println("Enter the value of the weather : ");
+                    weather = scanner.nextFloat();
+                    System.out.println("Enter the value of the acceleration : ");
+                    acceleration = scanner.nextFloat();
                     finalSpeed = computeTheFinalSpeed(initialVelocity, acceleration, weather);
                     System.out.println("The final speed is " + finalSpeed);
                     break;
@@ -125,23 +146,14 @@ public class WS13_FisicaEjercice {
 
     }
 
-    private static float computeRhombuses(float majorDiagonal, float minorDiagonal) {
+    private static float computeRhombuses(float mayorDiagonal, float menorDiagonal) {
 
         float area;
-        return (area = (majorDiagonal * minorDiagonal) / 2);
+        return (area = (mayorDiagonal * menorDiagonal) / 2);
     }
 
     private static float computeTheAreaOfTheTrapezium(float base, float topSide, float height) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the base : ");
-        base = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the top side : ");
-        topSide = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the height : ");
-        height = scanner.nextFloat();
-        scanner.nextLine();
+
         float area;
         float result;
         result = (base + topSide) / 2;
@@ -150,16 +162,7 @@ public class WS13_FisicaEjercice {
     }
 
     private static float computeTheFinalSpeed(float initialVelocity, float acceleration, float weather) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the initialVelocity : ");
-        initialVelocity = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the weather : ");
-        weather = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the acceleration : ");
-        acceleration = scanner.nextFloat();
-        scanner.nextLine();
+
         float finalSpeed;
         return (finalSpeed = initialVelocity + (acceleration * weather));
     }
