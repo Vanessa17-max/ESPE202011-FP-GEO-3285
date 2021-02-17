@@ -39,7 +39,19 @@ public class WS13_FisicaEjercice {
         float fuerza=0;
 
         do {
-            option = printMenu(input);
+        System.out.println("֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍");
+        System.out.println("~~~~VANESSA TONATO~~~~");
+        System.out.println("֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍");
+        System.out.println("  What would you like to do? ");
+        System.out.println(" 1.  The area of the circle .");
+        System.out.println(" 2.  The area of the rhombus.");
+        System.out.println(" 3.  The area of the Trapezium");
+        System.out.println(" 4.  The final speed.");
+        System.out.println(" 5.  The distance.");
+        System.out.println(" 6.  The acceletarion.");
+        System.out.println(" 0. Exit");
+        System.out.println("Enter your menu option -->> ");
+        option = input.nextInt();
 
             switch (option) {
 
@@ -68,11 +80,23 @@ public class WS13_FisicaEjercice {
                     break;
 
                 case 5:
+                         
+                    System.out.println("Enter the value of the initialVelocity : ");
+                    initialVelocity = scanner.nextFloat();
+                    System.out.println("Enter the value of the weather : ");
+                    weather = scanner.nextFloat();
+                    System.out.println("Enter the value of the final speed : ");
+                    finalSpeed = scanner.nextFloat();
                     distance = compteTheDistance(initialVelocity, finalSpeed, weather);
                     System.out.println("The distance is " + distance);
                     break;
 
                 case 6:
+                    Scanner teclado = new Scanner(System.in);
+                    System.out.println("introduce el valor de Fuerza");
+                    fuerza = teclado.nextFloat();
+                    System.out.println("introduce el valor de masa");
+                    masa = teclado.nextFloat();
                     acceleration = computeTheAcceleration(masa,fuerza);
                     System.out.println("The acceleration is " + acceleration);
                     break;
@@ -91,25 +115,7 @@ public class WS13_FisicaEjercice {
         } while (option != 7);
 
     }
-
-    private static int printMenu(Scanner input) {
-        int option;
-        System.out.println("֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍");
-        System.out.println("~~~~VANESSA TONATO~~~~");
-        System.out.println("֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍֍");
-        System.out.println("  What would you like to do? ");
-        System.out.println(" 1.  The area of the circle .");
-        System.out.println(" 2.  The area of the rhombus.");
-        System.out.println(" 3.  The area of the Trapezium");
-        System.out.println(" 4.  The final speed.");
-        System.out.println(" 5.  The distance.");
-        System.out.println(" 6.  The acceletarion.");
-        System.out.println(" 0. Exit");
-        System.out.println("Enter your menu option >> ");
-        option = input.nextInt();
-        return option;
-    }
-
+    
     private static float computeTheAreaOfTheCircle(float radio) {
 
         float pi = (float) 3.14;
@@ -159,24 +165,14 @@ public class WS13_FisicaEjercice {
     }
 
     private static float compteTheDistance(float initialVelocity, float finalSpeed, float weather) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the initialVelocity : ");
-        initialVelocity = scanner.nextFloat();
-        System.out.println("Enter the value of the weather : ");
-        weather = scanner.nextFloat();
-        System.out.println("Enter the value of the final speed : ");
-        finalSpeed = scanner.nextFloat();
+
         float distance;
         return (distance = ((initialVelocity + finalSpeed) / 2) * weather);
 
     }
 
     private static float computeTheAcceleration(float masa, float fuerza) {
-        Scanner teclado= new Scanner(System.in);
-        System.out.println("introduce el valor de Fuerza");
-        fuerza = teclado.nextFloat();
-        System.out.println("introduce el valor de masa");
-        masa = teclado.nextFloat();
+
         float acceleration;
        return (acceleration=(fuerza/masa));          
        
