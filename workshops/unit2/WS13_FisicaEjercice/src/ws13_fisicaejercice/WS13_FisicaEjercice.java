@@ -4,33 +4,39 @@
  * and open the template in the editor.
  */
 package ws13_fisicaejercice;
+
 import java.util.Scanner;
+
 /**
  *
  * @author FAMILIA TONATO
  */
 public class WS13_FisicaEjercice {
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         boolean mainLoop = true;
         int option;
         float area;
-        float radio = 0;
-        float majorDiagonal = 0;
-        float minorDiagonal = 0;
-        float base = 0;
-        float topSide = 0;
-        float height = 0;
-        float finalSpeed = 0;
-        float initialVelocity = 0;
+        float radio;
+        float mayorDiagonal;
+        float menorDiagonal;
+        float base=0;
+        float topSide=0;
+        float height=0;
+        float finalSpeed=0;
+        float initialVelocity=0;
         float gravity = 9.8F;
-        float weather = 0;
-        float acceleration = 0;
+        float weather=0;
+        float acceleration=0;
         float distance;
+        float masa=0;
+        float fuerza=0;
 
         do {
             option = printMenu(input);
@@ -38,11 +44,18 @@ public class WS13_FisicaEjercice {
             switch (option) {
 
                 case 1:
-                    area = showTheAreaOfTheCircle(radio);
+
+                    System.out.println("Enter the value of radio : ");
+                    radio = scanner.nextFloat();
+                    area = computeTheAreaOfTheCircle(radio);
                     System.out.println("The area of the circle is " + area);
                     break;
                 case 2:
-                    area = showtheAreaOfTheKite(majorDiagonal, minorDiagonal);
+                    System.out.println("Enter the value of the major diagonal : ");
+                    mayorDiagonal = scanner.nextFloat();
+                    System.out.println("Enter the value of the minor diagonal : ");
+                    menorDiagonal = scanner.nextFloat();
+                    area = computeAreaOfTheKite(mayorDiagonal, menorDiagonal);
                     System.out.println("The area of the rhombus is " + area);
                     break;
                 case 3:
@@ -60,13 +73,13 @@ public class WS13_FisicaEjercice {
                     break;
 
                 case 6:
-                    acceleration = showTheAcceleration(initialVelocity, finalSpeed, weather);
+                    acceleration = showTheAcceleration(masa,fuerza);
                     System.out.println("The acceleration is " + acceleration);
                     break;
 
                 case 0:
                     System.out.println("Thnks for using my software");
-                     System.out.println("[֍֍֍֍ GOOD BYE MY FRIEND IS VANESSA.T ֍֍֍֍]");
+                    System.out.println("[֍֍֍֍ GOOD BYE MY FRIEND IS VANESSA.T ֍֍֍֍]");
                     System.exit(0);
                     break;
 
@@ -97,11 +110,8 @@ public class WS13_FisicaEjercice {
         return option;
     }
 
-    private static float showTheAreaOfTheCircle(float radio) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of radio : ");
-        radio = scanner.nextFloat();
-        scanner.nextLine();
+    private static float computeTheAreaOfTheCircle(float radio) {
+
         float pi = (float) 3.14;
         float exponent = 2;
         float area;
@@ -109,14 +119,8 @@ public class WS13_FisicaEjercice {
 
     }
 
-    private static float showtheAreaOfTheKite(float majorDiagonal, float minorDiagonal) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the major diagonal : ");
-        majorDiagonal = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the minor diagonal : ");
-        minorDiagonal = scanner.nextFloat();
-        scanner.nextLine();
+    private static float computeAreaOfTheKite(float majorDiagonal, float minorDiagonal) {
+
         float area;
         return (area = (majorDiagonal * minorDiagonal) / 2);
     }
@@ -158,32 +162,27 @@ public class WS13_FisicaEjercice {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the value of the initialVelocity : ");
         initialVelocity = scanner.nextFloat();
-        scanner.nextLine();
         System.out.println("Enter the value of the weather : ");
         weather = scanner.nextFloat();
-        scanner.nextLine();
         System.out.println("Enter the value of the final speed : ");
         finalSpeed = scanner.nextFloat();
-        scanner.nextLine();
         float distance;
         return (distance = ((initialVelocity + finalSpeed) / 2) * weather);
 
     }
 
-    private static float showTheAcceleration(float initialVelocity, float finalSpeed, float weather) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the value of the initialVelocity : ");
-        initialVelocity = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the final speed : ");
-        finalSpeed = scanner.nextFloat();
-        scanner.nextLine();
-        System.out.println("Enter the value of the weather : ");
-        weather = scanner.nextFloat();
-        scanner.nextLine();
+    private static float showTheAcceleration(float masa, float fuerza) {
+        Scanner teclado= new Scanner(System.in);
+        System.out.println("introduce el valor de Fuerza");
+        fuerza = teclado.nextFloat();
+        System.out.println("introduce el valor de masa");
+        masa = teclado.nextFloat();
         float acceleration;
-        return (acceleration = (finalSpeed - initialVelocity) / weather);
-
+       return (acceleration=(fuerza/masa));          
+       
     }
-
 }
+
+
+
+
