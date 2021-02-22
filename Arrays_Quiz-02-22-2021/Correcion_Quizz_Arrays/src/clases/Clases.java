@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proof_arrays_pq2;
- import java.util.Scanner;
+package clases;
+import java.util.Scanner; 
+
 /**
  *
  * @author FAMILIA TONATO
  */
-public class Proof_arrays_PQ2 {
-
+public class Clases{
+static Scanner entrada = new Scanner(System.in);
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+    // TODO, add your application code 
  
         int Opc=1;
         float Suma=0,Cont1=0, Cont2=0, Cont3=0,Cont4=0,Cont5=0, Cont6=0, Cont7=0,Cont8=0,Cont9=0, Cont10=0, Cont11=0,Cont12=0,Cont13=0, Cont14=0, Cont15=0,Cont16=0;
@@ -160,5 +161,44 @@ public class Proof_arrays_PQ2 {
         System.out.println("El Candidato Giovanny Andrade obtuvo el : "+Cont3/Suma*100+"% con "+Cont15+" votos.");
         System.out.println("El Candidato Carlos Sagñay obtuvo el : "+Cont4/Suma*100+"% con "+Cont16+" votos.");        
 
+}
+public static void main() throws java.io.IOException {
+    Scanner teclado = new Scanner(System.in);
+    System.out.println("Entra número de candidatos: ");
+    int num_candidatos = teclado.nextInt(); //Aquí especifico el espacio de la array candidatos
+
+    System.out.println("Entra número de votantes:");
+    int total_votantes = teclado.nextInt(); //Aquí especifico el espacio de la array votos
+
+    int voto_user; //Voto de cada user
+
+    int[] candidatos = new int[num_candidatos]; // Num de Candidatos
+
+    int[] votos = new int[total_votantes]; // Num de personas que votan
+
+
+    for (int i = 0; i < votos.length; i++) { //tienes que compararlo con el numero de votantes, para que repita la accion esa cantidad de veces
+
+        do {
+            int indice = i + 1;
+            System.out.println("Votante " + indice + ", entra tu voto (1-" + num_candidatos + "):");
+
+            // Aquí tenemos el voto del votante
+            voto_user = teclado.nextInt();
+
+            if (voto_user > num_candidatos) {
+                System.out.println("Voto inválido.");
+            }
+            else {
+                candidatos[voto_user-1]++;
+            }
+        } while (voto_user > num_candidatos);
+    }
+    System.out.println("Resultados:");
+    System.out.println("-----------------------");
+    for (int i = 0; i < candidatos.length; i++) {
+
+        System.out.println("Candidato " + (i + 1) + " " + candidatos[i] + " votos.");
+    }
 }
 }
